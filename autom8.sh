@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########################################################
-# AutoM8 - Ubuntu Post-Install Automation Tool         #
+# AutoM8 - Linux Server Post-Install Automation Tool   #
 # Author: Marcio Moreira junior                        #
 # email: mdmjunior@gmail.com                           #
 # Versão 1.0                                           #
@@ -17,7 +17,6 @@ check_env() {
     HOSTNAME=$(hostnamectl hostname)
 
     clear
-    echo "  [ -------------------------------------------------- ]"
     echo "                                                        "
     echo "   █████╗ ██╗   ██╗████████╗ ██████╗ ███╗   ███╗ █████╗ "
     echo "  ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗████╗ ████║██╔══██╗"
@@ -25,9 +24,7 @@ check_env() {
     echo "  ██╔══██║██║   ██║   ██║   ██║   ██║██║╚██╔╝██║██╔══██╗"
     echo "  ██║  ██║╚██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║╚█████╔╝"
     echo "  ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝ ╚════╝ "
-    echo "  [ -------------------------------------------------- ]"
-    echo "              Ubuntu Post-Installation Tool             "
-    echo "       https://marciomoreirajunior.com.br/AutoM8/       "
+    echo "                  Linux Automation Tool                 "
 
     # Verifica se a distribuição é compatível
     if [ "$DISTRO" != "Ubuntu" ]; then
