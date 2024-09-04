@@ -59,10 +59,10 @@ install_desktop() {
     sudo apt install -y ntpdate vim net-tools iproute2 curl sshpass ethtool wget links htop iotop openssh-server openssl gpg 
     echo -e "\e[32mPacotes instalados\e[0m"
 
-    echo "INSTANDO REPOSITÓRIO DOCKER"
-    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update
+    #echo "INSTANDO REPOSITÓRIO DOCKER"
+    #sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    #echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    #sudo apt update
 
     echo "INSTALANDO FERRAMENTAS DE COMPACTAÇÃO DE ARQUIVOS"
     sudo apt install -y rar unrar bzip2 tar unzip
@@ -77,7 +77,7 @@ install_desktop() {
     echo -e "\e[32mPacotes instalados\e[0m"
 
     echo "INSTALANDO FERRAMENTAS DE DESENVOLVIMENTO"
-    sudo apt install -y apt-transport-https ca-certificates git ruby python3 python3-pip 
+    sudo apt install -y apt-transport-https ca-certificates git ruby python3 python3-pip
     echo -e "\e[32mPacotes Instalados\e[0m"
 
     echo "ATUALIZANDO EDITOR DE TEXTO PADRÃO"
@@ -86,7 +86,7 @@ install_desktop() {
 
     # Adicionando usuário ao sudo sem senha
     echo "ADICIONANDO USUÁRIO AO SUDOERS"
-    echo "%mmoreira ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+    echo "%$USERNM ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
     # Configurando SSH
     echo "CONFIGURANDO SSH SERVER PARA PERMITIR LOGIN COM CHAVE"
@@ -96,11 +96,6 @@ install_desktop() {
 
     echo "SISTEMA PRONTO PARA USO"
     exit
-}
-
-install_server() {
-    echo "Função de instalação do servidor ainda não implementada"
-    exit 1
 }
 
 # Chamar a função check_env
