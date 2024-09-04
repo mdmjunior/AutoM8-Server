@@ -36,7 +36,7 @@ check_env() {
 
 }
 
-install_desktop() {
+install_server() {
     echo "INICIANDO INSTALAÇÃO OTIMIZADA PARA DESKTOP"
     echo "O script irá preparar o seu sistema operacional, aguarde."
     echo -e "\e[32mDISTRO: $DISTRO\e[0m"
