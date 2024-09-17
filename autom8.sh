@@ -56,7 +56,7 @@ install_server() {
     fi
 
     echo "INSTALANDO PACOTES BÁSICOS"
-    sudo apt install -y ntpdate vim net-tools iproute2 curl sshpass ethtool wget links htop iotop openssh-server openssl gpg 
+    sudo apt install -y ntpdate vim net-tools iproute2 curl sshpass ethtool wget links htop iotop openssh-server openssl gpg
     echo -e "\e[32mPacotes instalados\e[0m"
 
     #echo "INSTANDO REPOSITÓRIO DOCKER"
@@ -91,6 +91,7 @@ install_server() {
     # Configurando SSH
     echo "CONFIGURANDO SSH SERVER PARA PERMITIR LOGIN COM CHAVE"
     sudo sed -i 's/#PubkeyAuthentication/PubkeyAuthentication/g' /etc/ssh/sshd_config
+    sudo echo "" > /etc/sudoers.d/
     echo "Reiniciando serviço SSHD"
     sudo systemctl restart ssh
 
